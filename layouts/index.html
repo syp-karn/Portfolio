@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+    <link rel="icon" href=/fav.png type="image/gif">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-mcnlBOSK0pAi4xAh4GdqE6iS2jXJoNw5NZ50WvT0ClGUPthAzfMY6VkOEH0b5eB/0M6qXlMCgCqXIMaQeF9aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <link rel="stylesheet" href="/css/font.css" media="all">
+
+    <meta property="og:url" content="{{ .Site.BaseURL }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:title" content="Poorvaj - Portfolio">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Poorvaj - Portfolio">
+
+    <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="/css/header.css" media="all">
+    <link rel="stylesheet" href="/css/footer.css" media="all">
+    <link rel="stylesheet" href="/css/theme.css" media="all">
+
+    <style>
+        :root {
+            /* Hacker Terminal Theme with Color Variety */
+            --text-color: #00ff41;
+            --text-secondary-color: #39ff14;
+            --text-link-color: #00ff41;
+            --background-color: #0a0a0a;
+            --secondary-background-color: #1a1a1a;
+            --primary-color: #00ff41;
+            --secondary-color: #0a0a0a;
+
+            --text-color-dark: #00ff41;
+            --text-secondary-color-dark: #39ff14;
+            --text-link-color-dark: #00ff41;
+            --background-color-dark: #000000;
+            --secondary-background-color-dark: #0d1117;
+            --primary-color-dark: #00ff41;
+            --secondary-color-dark: #0d1117;
+
+            /* Hacker accent colors */
+            --hacker-green: #00ff41;
+            --hacker-cyan: #00ffff;
+            --hacker-purple: #8b5cf6;
+            --hacker-orange: #ff6b35;
+            --hacker-red: #ff0040;
+        }
+
+        body {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: left;
+            scroll-behavior: smooth;
+        }
+
+        html {
+            background-color: #000 !important;
+        }
+
+        /* Hacker scanline effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(rgba(0, 255, 65, 0.03),
+                    rgba(0, 255, 65, 0.03) 2px,
+                    transparent 2px,
+                    transparent 4px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        body::-webkit-scrollbar {
+            height: 0px;
+            width: 8px;
+            background-color: var(--background-color);
+        }
+
+        ::-webkit-scrollbar-track {
+            border-radius: 1rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 1rem;
+            background: #b0b0b0;
+            outline: 1px solid var(--background-color);
+        }
+
+        #search-content::-webkit-scrollbar {
+            width: .5em;
+            height: .1em;
+            background-color: var(--background-color);
+        }
+
+        /* Portfolio Specific Styles - Hacker theme */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            color: var(--text-color-dark);
+            text-shadow: 0 0 8px rgba(0, 255, 65, .6);
+        }
+
+        .hacker-title {
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            overflow: hidden;
+            /* border-right: .15em solid #00ff00; */
+            white-space: nowrap;
+            animation: typing 5s steps(30, end), blink .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        .cursor {
+            border-right: none;
+            /* Remove the cursor */
+        }
+
+        @keyframes blink {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #00ff00;
+            }
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--hacker-green);
+            margin: 15px auto;
+            box-shadow: 0 0 6px var(--hacker-green);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--background-color-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hacker theme - always dark */
+        body,
+        html {
+            background-color: #000 !important;
+            color: var(--text-color-dark) !important;
+        }
+
+        section,
+        header,
+        footer,
+        nav,
+        .container,
+        .row,
+        .col,
+        .card,
+        .achievement-item,
+        .project-card,
+        .skill-card {
+            background-color: #000 !important;
+            color: var(--text-color-dark) !important;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, .9) !important;
+            border-bottom: 1px solid var(--hacker-green);
+        }
+
+        .nav-link {
+            color: var(--text-color-dark) !important;
+        }
+
+        .nav-link:hover {
+            color: var(--text-link-color-dark) !important;
+            text-shadow: 0 0 6px var(--hacker-green);
+        }
+
+        .btn,
+        .btn-primary,
+        .btn-outline-primary {
+            border: 1px solid var(--hacker-green);
+            color: var(--hacker-green);
+            background: transparent;
+            box-shadow: 0 0 6px rgba(0, 255, 65, .3);
+        }
+
+        .btn:hover {
+            background: var(--hacker-green);
+            color: #000;
+            box-shadow: 0 0 12px var(--hacker-green);
+        }
+
+        .border,
+        .card,
+        .form-control {
+            border-color: var(--hacker-green) !important;
+        }
+
+        .bg-light,
+        .bg-white {
+            background-color: #000 !important;
+        }
+
+        .nav-dark {
+            background: rgba(0, 0, 0, .95) !important;
+            border-bottom: 1px solid var(--hacker-green);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color-dark);
+            border-color: var(--primary-color-dark);
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 30px;
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary-color-dark);
+            color: var(--primary-color-dark);
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 30px;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color-dark);
+            color: white;
+        }
+
+        .about-text {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Hacker-style skill boxes */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(0, 0, 0, 0.85);
+            border: 1px solid var(--hacker-cyan);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px var(--hacker-cyan), 0 0 20px var(--hacker-cyan) inset;
+            transition: 0.3s ease-in-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--hacker-cyan), 0 0 40px var(--hacker-cyan) inset;
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-color-dark);
+            text-align: center;
+            text-shadow: 0 0 5px var(--hacker-green);
+        }
+
+        .skill-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+        }
+
+        .skill-chip {
+            background: rgba(0, 0, 0, 0.6);
+            color: var(--text-color-dark);
+            border: 1px solid var(--hacker-green);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: .9rem;
+            box-shadow: 0 0 5px var(--hacker-green) inset;
+            transition: 0.2s ease;
+        }
+
+        .skill-chip:hover {
+            background: var(--hacker-green);
+            color: #000;
+            box-shadow: 0 0 8px var(--hacker-green);
+        }
+
+        /* Alternating Timeline Layout */
+        .timeline-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            width: 45%;
+            padding: 2rem;
+            background: var(--secondary-background-color-dark);
+            border: 1px solid var(--hacker-cyan);
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 255, 255, .2);
+            transition: transform .3s ease;
+            z-index: 2;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 12px rgba(0, 255, 255, .4);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            margin-left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+            margin-left: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 16px;
+            height: 16px;
+            background: var(--hacker-cyan);
+            border: 2px solid #000;
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--hacker-cyan);
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -8px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--hacker-cyan);
+            box-shadow: 0 0 6px var(--hacker-cyan);
+            transform: translateX(-50%);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-card {
+            background: var(--secondary-background-color-dark);
+            border: 1px solid var(--hacker-cyan);
+            border-radius: 8px;
+            padding: 1.25rem;
+            height: 100%;
+            transition: transform .3s ease;
+            box-shadow: 0 0 8px rgba(0, 255, 255, .2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, .5);
+        }
+
+        .project-content {
+            padding: .25rem 0 0;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tags {
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: rgba(0, 255, 255, .1);
+            color: var(--hacker-cyan);
+            border: 1px solid var(--hacker-cyan);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-item {
+            background: var(--secondary-background-color-dark);
+            border: 1px solid var(--hacker-cyan);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 0 8px rgba(0, 255, 255, .2);
+            transition: transform .3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 16px rgba(0, 255, 255, .4);
+        }
+
+        .achievement-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .contact-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 1px solid var(--hacker-cyan);
+            color: var(--text-color-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 255, 255, .1);
+            box-shadow: 0 0 8px rgba(0, 255, 255, .3);
+            transition: transform .3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-icon:hover {
+            background: var(--hacker-cyan);
+            color: #000;
+            box-shadow: 0 0 12px var(--hacker-cyan);
+            transform: scale(1.1);
+        }
+
+        .contact-form .form-control {
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #dee2e6;
+        }
+
+        .dark .contact-form .form-control {
+            background-color: var(--secondary-background-color-dark);
+            border-color: #495057;
+            color: var(--text-color-dark);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--secondary-background-color);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .dark .social-link {
+            background-color: var(--secondary-background-color-dark);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            /* Mobile timeline - stack vertically */
+            .timeline-item {
+                width: 100% !important;
+                left: 0 !important;
+                margin-left: 0 !important;
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+
+            .timeline-container::before {
+                display: none;
+            }
+        }
+    </style>
+
+    <meta name="description" content="Ramcharan's Professional Portfolio - showcasing skills, experience, and projects">
+    <title>Poorvaj's Portfolio</title>
+</head>
+
+<body>
+    <script>
+        // Hacker theme is always active - no theme switching needed
+    </script>
+
+    <header id="profileHeader">
+        <nav class="pt-3 navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+                <div></div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24"
+                        data-view-component="true">
+                        <path fill-rule="evenodd"
+                            d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+                        </path>
+                    </svg>
+                </button>
+
+                <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#experience">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#certifications">Certifications</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#achievements">Achievements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://drive.google.com/file/d/1rB1lj_-HyYAOluy7ZeDk5UzxqXbukPqU/view?usp=sharing" target="_blank"
+                                rel="noopener">Resume</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="content">
+        <!-- 1) Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <!-- <div class="row align-items-center"> -->
+                <div class="col-12 text-center hero-content">
+                    <h1 class="hero-title"><span style="color: var(--hacker-green);">B S Poorvaj Pranav</span></h1>
+                    <br>
+                    <h2 class="hero-subtitle">Offensive Security Practitioner • Exploring Cloud Security</h2>
+                    <!-- <p class="lead">Welcome to my portfolio website!</p> -->
+                </div>
+                <!-- </div> -->
+            </div>
+        </section>
+
+        <!-- 2) About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="hacker-title">~$ About Me</div>
+                <div class="about-text">
+                    <p>
+                        I’m a sophomore at IIIT Sri City with a strong passion for cybersecurity, specializing in
+                        Offensive Security. I enjoy identifying and exploiting vulnerabilities, testing systems to
+                        uncover security flaws, and enhancing overall resilience. I’m also deeply engaged in CTFs, where
+                        I tackle complex challenges to sharpen my skills.
+                    </p>
+                    <p>Currently I'm honing my web app pentesting skills, and researching Cloud Security. I also dabble
+                        in Machine Learning and AI Security in my spare time.</p>
+                    <!-- <div class="row mt-4">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li><strong>Name:</strong> Ramcharan</li>
+                                    <li><strong>Email:</strong> hello@ramcharan.com</li>
+                                    <li><strong>Location:</strong> City, Country</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li><strong>Degree:</strong> Bachelor of Computer Science</li>
+                                    <li><strong>Freelance:</strong> Available</li>
+                                    <li><strong>Languages:</strong> English, Spanish</li>
+                                </ul>
+                            </div>
+                        </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Education removed as requested -->
+
+        <!-- Skills Section
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="skill-category">
+                            <h3>Technical Skills</h3>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>HTML/CSS</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>JavaScript</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>React</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Node.js</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="skill-category">
+                            <h3>Professional Skills</h3>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>UI/UX Design</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Project Management</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Communication</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Problem Solving</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- 3) Work Experience -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="hacker-title">~$ Work Experience</div>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <h3 class="timeline-title">Cybersecurity Domain Lead</h3>
+                        <span class="timeline-date">August 2025 - Present</span>
+
+                        <h4 class="timeline-subtitle">Google Developer Groups IIITS</h4>
+                        <ul>
+                            <!-- <li>Developed responsive web applications using React, Redux, and TypeScript</li>
+                            <li>Collaborated with UX designers to implement user-friendly interfaces</li>
+                            <li>Improved website performance by 40% through code optimization</li>
+                            <li>Mentored junior developers and conducted code reviews</li> -->
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+
+                        <h3 class="timeline-title">CTF Player</h3>
+                        <span class="timeline-date">June 2024 - Present</span>
+                        <h4 class="timeline-subtitle"> Caff3in3-DB</h4>
+                        <ul>
+                            <li>Active participant in CTFs with a focus on Web Exploitation, Reverse Engineering,
+                                Boot2Root, and OSINT
+                                challenges.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+
+                        <h3 class="timeline-title">Product Testing Intern</h3>
+                        <span class="timeline-date">December 2024 - January 2025</span>
+                        <h4 class="timeline-subtitle">Fluidity</h4>
+                        <ul>
+                            <li> Tested Android and web platforms regularly, identifying usability issues and suggesting
+                                UX improvements.</li>
+                            <li>Provided feedback on app features, navigation, and overall user experience to support
+                                development decisions.</li>
+                            <li>Contributed to discussions that shaped UI enhancements and helped refine early product
+                                versions.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+
+                        <h3 class="timeline-title">Director of Operations</h3>
+                        <span class="timeline-date">January 2025 - August 2025</span>
+                        <h4 class="timeline-subtitle">E-Cell IIITS</h4>
+                        <ul>
+                            <li>Planned and managed event logistics, including scheduling, resource allocation, and
+                                vendor coordination.</li>
+                            <li>Led operations team to ensure smooth execution of venue setup and overall event
+                                management.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+
+                        <h3 class="timeline-title">Cybersecurity Core</h3>
+                        <span class="timeline-date">August 2024 - August 2025</span>
+                        <h4 class="timeline-subtitle">iOTA</h4>
+                        <ul>
+                            <li>Develop Capture-the-Flag (CTF) challenges</li>
+                            <li>Represent the iOTA Club at industry events and competitions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4) Certifications -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <div class="hacker-title">~$ Certifications</div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="achievement-item">
+                            <h3>eLearnSecurity Junior Penetration Tester (eJPTv2)</h3>
+                            <p>Issued by INE Security FKA eLearnSecurity</p>
+                            <p class="achievement-date">December 2024</p>
+                            <p>Assessment Methodologies • Penetration Testing • Network Security • Vulnerability
+                                Assessment • Exploitation Techniques • Linux and Windows Privilege Escalation</p>
+                            <p><a href="https://certs.ine.com/93df60a7-15d2-4fce-848e-f56c99dda39e">View Certificate</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="achievement-item">
+                            <h3>Introduction to Cybersecurity Tools & Cyberattacks</h3>
+                            <p>Issued by IBM(Coursera)</p>
+                            <p class="achievement-date">July 2024</p>
+                            <p>Cybersecurity Controls • Cybersecurity Threats</p>
+                            <p><a href="https://www.coursera.org/account/accomplishments/verify/UX2MAAL6NVCK">View
+                                    Certificate</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="achievement-item">
+                            <h3>The Bits and Bytes of Computer Networking</h3>
+                            <p>Issued by Google(Coursera)</p>
+                            <p class="achievement-date">June 2024</p>
+                            <p>Networking • Network Engineering • Network Troubleshooting</p>
+                            <p><a href="https://www.coursera.org/account/accomplishments/verify/P23KXZ8NNZYS">View
+                                    Certificate</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5) Projects -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="hacker-title">~$ Projects</div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card">
+                            <div class="project-content">
+                                <h3 class="project-title">HackTheBox Machine Writeups</h3>
+                                <div class="project-tags">
+                                    <br>
+                                    <span class="project-tag">Penetration Testing</span>
+                                    <span class="project-tag">Web Application Pentesting</span>
+                                </div>
+                                <p>A collection of writeups on retired machines of HackTheBox</p>
+                                <a href="https://github.com/syp-karn/HTB"
+                                    class="btn btn-sm btn-outline-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card">
+                            <div class="project-content">
+                                <h3 class="project-title">Task Management App</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Vue.js</span>
+                                    <span class="project-tag">Firebase</span>
+                                    <span class="project-tag">CSS3</span>
+                                </div>
+                                <p>A collaborative task management application with real-time updates and drag-and-drop
+                                    functionality.</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card">
+                            <div class="project-content">
+                                <h3 class="project-title">Travel Blog Platform</h3>
+                                <div class="project-tags">
+                                    <span class="project-tag">Gatsby</span>
+                                    <span class="project-tag">Contentful</span>
+                                    <span class="project-tag">GraphQL</span>
+                                </div>
+                                <p>A performant travel blog built with Gatsby, featuring dynamic content and optimized
+                                    media delivery.</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 6) Skills -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="hacker-title">~$ Skills</div>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <h3>Programming</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">C</span>
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">Bash</span>
+                            <span class="skill-chip">Express</span>
+                            <span class="skill-chip">Node.js</span>
+                            <span class="skill-chip">HTML</span>
+                            <span class="skill-chip">CSS</span>
+                            <span class="skill-chip">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Penetration Testing</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Reconnaissance</span>
+                            <span class="skill-chip">OSINT</span>
+                            <span class="skill-chip">Enumeration</span>
+                            <span class="skill-chip">Exploitation</span>
+                            <span class="skill-chip">Privilege Escalation</span>
+                            <span class="skill-chip">Post Exploitation & Persistence</span>
+                            <span class="skill-chip">Reporting</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Web Application Pentesting</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Source Code Review</span>
+                            <span class="skill-chip">Broken Authentication</span>
+                            <span class="skill-chip">Command Injection</span>
+                            <span class="skill-chip">File Upload Attacks</span>
+                            <span class="skill-chip">Session Security</span>
+                            <span class="skill-chip">API Security</span>
+                            <span class="skill-chip">Server-Side Attacks</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Pentesting Tools</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Nmap</span>
+                            <span class="skill-chip">Burp Suite</span>
+                            <span class="skill-chip">Wireshark</span>
+                            <span class="skill-chip">Metasploit</span>
+                            <span class="skill-chip">sqlmap</span>
+                            <span class="skill-chip">BloodHound</span>
+                            <span class="skill-chip">Mimikatz</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Cloud & DevOps</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">AWS</span>
+                            <span class="skill-chip">Docker</span>
+                            <span class="skill-chip">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7) Achievements -->
+        <section id="achievements" class="section">
+            <div class="container">
+                <div class="hacker-title">~$ Achievements</div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="achievement-item">
+                            <span class="achievement-date">May 2025</span>
+                            <h3>AIR 27</h3>
+                            <p>NCIIPC-AICTE Pentathon'25 - Ranked 27th in the final round of the NCIIPC-AICTE Pentathon,
+                                qualifying from a pool of 20,000 participants.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="achievement-item">
+                            <span class="achievement-date">April 2025</span>
+                            <h3>Runner-Up</h3>
+                            <p>HackTheBreach CTF - Secured 2nd place among 200+ participants in a 48-hour final round
+                                focused on Web Exploitation, RE, Forensics,
+                                OSINT, and Binary Exploitation.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="achievement-item">
+                            <span class="achievement-date">September 2024</span>
+                            <h3>#11</h3>
+                            <p>Cryptic Hunt 3.0 - Secured 11th place out of 160 teams in a cryptographic-cybersecurity
+                                scavenger hunt competition.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="achievement-item">
+                            <span class="achievement-date">March 2024</span>
+                            <h3>Runners-Up</h3>
+                            <p>The Maze of Osiris - Runner-Up in a cybersecurity CTF challenge designed around digital
+                                forensics and puzzle solving.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8) Volunteer -->
+        <section id="volunteer" class="section">
+            <div class="container">
+                <div class="hacker-title">~$ Volunteer Experience</div>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <span class="timeline-date">July 2024 - August 2024</span>
+                        <h3 class="timeline-title">Web3ssh</h3>
+                        <h4 class="timeline-subtitle">Outreach Team</h4>
+                        <p> Worked on outreach and communication to promote the Web3ssh Summer School and Hackathon 2024
+                            across
+                            institutions, improving participation through direct engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9) Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="hacker-title">~$ Contact Me</div>
+                <div class="text-center">
+                    <!-- <p>Interested in collaborating on AI/ML or security projects? Let's connect!</p> -->
+                    <div class="contact-icons justify-content-center mx-auto">
+                        <a class="contact-icon" href="https://github.com/syp-karn" aria-label="GitHub"
+                            title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a class="contact-icon" href="https://linkedin.com/in/poorvajbs" aria-label="LinkedIn"
+                            title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="contact-icon" href="mailto:the.poorvaj@gmail.com" aria-label="Email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a class="contact-icon" href="https://tryhackme.com/p/0xKarn" target="_blank" rel="noopener">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="IconChangeColor" height="30" width="30"><title>TryHackMe</title><path d="M10.705 0C7.54 0 4.902 2.285 4.349 5.291a4.525 4.525 0 0 0-4.107 4.5 4.525 4.525 0 0 0 4.52 4.52h6.761a.625.625 0 1 0 0-1.25H4.761a3.273 3.273 0 0 1-3.27-3.27A3.273 3.273 0 0 1 6.59 7.08a.625.625 0 0 0 .7-1.035 4.488 4.488 0 0 0-1.68-.69 5.223 5.223 0 0 1 5.096-4.104 5.221 5.221 0 0 1 5.174 4.57 4.489 4.489 0 0 0-.488.305.625.625 0 1 0 .731 1.013 3.245 3.245 0 0 1 1.912-.616 3.278 3.278 0 0 1 3.203 2.61.625.625 0 0 0 1.225-.251 4.533 4.533 0 0 0-4.428-3.61 4.54 4.54 0 0 0-.958.105C16.556 2.328 13.9 0 10.705 0zm5.192 10.64a.925.925 0 0 0-.462.108.913.913 0 0 0-.313.29 1.27 1.27 0 0 0-.175.427 2.39 2.39 0 0 0-.054.514c0 .181.018.353.054.517.036.164.095.307.175.43a.899.899 0 0 0 .313.297c.127.073.281.11.462.11.18 0 .334-.037.46-.11a.897.897 0 0 0 .309-.296c.08-.124.137-.267.173-.431.036-.164.054-.336.054-.517 0-.18-.018-.352-.054-.514a1.271 1.271 0 0 0-.173-.426.901.901 0 0 0-.309-.291.917.917 0 0 0-.46-.108zm6.486 0a.925.925 0 0 0-.462.108.913.913 0 0 0-.313.29 1.27 1.27 0 0 0-.175.427 2.39 2.39 0 0 0-.053.514c0 .181.017.353.053.517.036.164.095.307.175.43a.899.899 0 0 0 .313.297c.127.073.281.11.462.11.18 0 .334-.037.46-.11a.897.897 0 0 0 .31-.296c.078-.124.136-.267.172-.431.036-.164.054-.336.054-.517 0-.18-.018-.352-.054-.514a1.271 1.271 0 0 0-.173-.426.901.901 0 0 0-.308-.291.916.916 0 0 0-.461-.108zm-8.537.068l-.84.618.313.43.476-.368v1.877h.603v-2.557zm6.486 0l-.841.618.314.43.477-.368v1.877h.603v-2.557zm-4.435.445c.08 0 .143.028.193.084.05.057.087.127.114.21.026.083.044.173.054.269a2.541 2.541 0 0 1 0 .533c-.01.097-.028.187-.054.27a.584.584 0 0 1-.114.21.243.243 0 0 1-.193.085.248.248 0 0 1-.195-.086.584.584 0 0 1-.118-.209 1.245 1.245 0 0 1-.056-.27 2.645 2.645 0 0 1 0-.533c.01-.096.029-.186.056-.27a.583.583 0 0 1 .118-.209.25.25 0 0 1 .195-.084zm6.486 0c.08 0 .144.028.193.084.05.057.087.127.114.21.027.083.044.173.054.269a2.541 2.541 0 0 1 0 .533c-.01.097-.027.187-.054.27a.584.584 0 0 1-.114.21.243.243 0 0 1-.193.085.249.249 0 0 1-.195-.086.581.581 0 0 1-.117-.209 1.245 1.245 0 0 1-.056-.27 2.642 2.642 0 0 1 0-.533c.01-.096.028-.186.056-.27a.58.58 0 0 1 .117-.209.25.25 0 0 1 .195-.084zm-2.191 3.51a.93.93 0 0 0-.463.109.908.908 0 0 0-.312.291c-.08.122-.139.263-.175.426a2.383 2.383 0 0 0-.054.514c0 .18.018.353.054.516.036.164.094.308.175.432a.91.91 0 0 0 .312.296.92.92 0 0 0 .463.11c.18 0 .333-.037.46-.11a.892.892 0 0 0 .308-.296 1.32 1.32 0 0 0 .174-.432c.036-.163.054-.335.054-.516 0-.18-.018-.352-.054-.514a1.274 1.274 0 0 0-.174-.426.89.89 0 0 0-.309-.291.918.918 0 0 0-.46-.108zm-6.402.07l-.841.617.314.43.476-.369v1.878h.604v-2.557zm2.125 0l-.841.617.314.43.477-.369v1.878h.603v-2.557zm2.116 0l-.84.617.313.43.477-.369v1.878h.603v-2.557zm2.16.443c.08 0 .144.028.194.085a.605.605 0 0 1 .114.21c.026.083.044.172.053.269a2.639 2.639 0 0 1 0 .532 1.28 1.28 0 0 1-.053.27.585.585 0 0 1-.114.21.244.244 0 0 1-.193.085.25.25 0 0 1-.196-.085.589.589 0 0 1-.117-.21 1.245 1.245 0 0 1-.056-.27 2.597 2.597 0 0 1 0-.532c.01-.097.028-.186.056-.27a.589.589 0 0 1 .117-.209.249.249 0 0 1 .196-.085zm-6.729 3.073a.676.676 0 0 0-.335.078.661.661 0 0 0-.227.211.91.91 0 0 0-.127.31c-.027.118-.04.242-.04.373s.013.256.04.375a.93.93 0 0 0 .127.313.65.65 0 0 0 .227.215c.092.053.204.08.335.08a.655.655 0 0 0 .334-.08.65.65 0 0 0 .225-.215c.057-.09.1-.194.125-.313a1.75 1.75 0 0 0 .04-.375c0-.13-.014-.255-.04-.373a.931.931 0 0 0-.125-.31.658.658 0 0 0-.225-.21.667.667 0 0 0-.334-.08zm3.086 0a.675.675 0 0 0-.336.078.661.661 0 0 0-.226.211.907.907 0 0 0-.127.31 1.69 1.69 0 0 0-.04.373c0 .131.013.256.04.375a.928.928 0 0 0 .127.313c.058.09.134.162.226.215.093.053.205.08.336.08a.655.655 0 0 0 .334-.08.65.65 0 0 0 .224-.215c.058-.09.1-.194.126-.313a1.752 1.752 0 0 0 0-.748.94.94 0 0 0-.126-.31.657.657 0 0 0-.224-.21.667.667 0 0 0-.334-.08zm5.108 0a.675.675 0 0 0-.336.078.661.661 0 0 0-.226.211.91.91 0 0 0-.127.31c-.027.118-.04.242-.04.373s.013.256.04.375a.931.931 0 0 0 .127.313c.058.09.134.162.226.215.093.053.205.08.336.08.13 0 .243-.027.334-.08a.65.65 0 0 0 .224-.215c.058-.09.1-.194.126-.313a1.75 1.75 0 0 0 .04-.375c0-.13-.014-.255-.04-.373a.943.943 0 0 0-.126-.31.657.657 0 0 0-.224-.21.668.668 0 0 0-.334-.08zm-6.658.05l-.61.448.227.311.346-.266v1.362h.438v-1.856zm3.068 0l-.61.448.227.311.346-.266v1.362h.438v-1.856zm5.108 0l-.611.448.228.311.346-.266v1.362h.438v-1.856zm-9.712.322c.058 0 .105.02.14.062a.421.421 0 0 1 .083.151.96.96 0 0 1 .04.196 1.932 1.932 0 0 1 0 .386.954.954 0 0 1-.04.197.421.421 0 0 1-.083.152.176.176 0 0 1-.14.061.18.18 0 0 1-.141-.06.427.427 0 0 1-.085-.153.887.887 0 0 1-.041-.197 1.96 1.96 0 0 1 0-.386.893.893 0 0 1 .04-.196.42.42 0 0 1 .086-.151.181.181 0 0 1 .141-.062zm3.086 0c.058 0 .104.02.14.062a.421.421 0 0 1 .082.151.94.94 0 0 1 .04.196 1.906 1.906 0 0 1 0 .386.93.93 0 0 1-.04.197.421.421 0 0 1-.082.152.176.176 0 0 1-.14.061.18.18 0 0 1-.141-.06.42.42 0 0 1-.086-.153.846.846 0 0 1-.04-.197 1.965 1.965 0 0 1-.011-.195c0-.057.004-.121.01-.191a.849.849 0 0 1 .041-.196.42.42 0 0 1 .086-.151.182.182 0 0 1 .141-.062zm5.108 0c.058 0 .104.02.14.062a.421.421 0 0 1 .082.151.92.92 0 0 1 .04.196 1.963 1.963 0 0 1 0 .386.943.943 0 0 1-.04.197.421.421 0 0 1-.082.152.177.177 0 0 1-.14.061.18.18 0 0 1-.142-.06.437.437 0 0 1-.085-.153.95.95 0 0 1-.04-.197 1.965 1.965 0 0 1-.011-.195c0-.057.004-.121.01-.191a.959.959 0 0 1 .04-.196.47.47 0 0 1 .086-.151.181.181 0 0 1 .142-.062zm-1.684 1.814a.675.675 0 0 0-.336.079.66.66 0 0 0-.227.21.91.91 0 0 0-.127.31 1.731 1.731 0 0 0 0 .748.939.939 0 0 0 .127.314c.059.09.134.162.227.215.093.053.205.08.336.08a.66.66 0 0 0 .334-.08.648.648 0 0 0 .224-.215c.058-.09.1-.195.126-.314a1.737 1.737 0 0 0-.001-.747.928.928 0 0 0-.125-.31.65.65 0 0 0-.224-.211.668.668 0 0 0-.334-.079zm3.063 0a.676.676 0 0 0-.336.079.664.664 0 0 0-.227.21.906.906 0 0 0-.127.31 1.74 1.74 0 0 0 0 .748.936.936 0 0 0 .127.314.66.66 0 0 0 .227.215c.092.053.204.08.336.08a.654.654 0 0 0 .334-.08.648.648 0 0 0 .223-.215c.058-.09.1-.195.126-.314a1.74 1.74 0 0 0 0-.747.928.928 0 0 0-.126-.31.65.65 0 0 0-.223-.211.666.666 0 0 0-.334-.079zm-1.545.05l-.611.448.228.312.346-.267v1.363h.438v-1.856zm-1.518.323c.057 0 .104.02.14.061a.42.42 0 0 1 .082.152.91.91 0 0 1 .04.195 1.966 1.966 0 0 1 0 .387.951.951 0 0 1-.04.197.421.421 0 0 1-.082.152.177.177 0 0 1-.14.06.18.18 0 0 1-.142-.06.428.428 0 0 1-.085-.152.914.914 0 0 1-.04-.197 1.96 1.96 0 0 1-.011-.195c0-.058.003-.122.01-.192a.923.923 0 0 1 .041-.195c.02-.06.048-.11.085-.152a.181.181 0 0 1 .142-.061zm3.063 0c.057 0 .104.02.14.061a.42.42 0 0 1 .082.152.94.94 0 0 1 .04.195 1.91 1.91 0 0 1 0 .387.93.93 0 0 1-.04.197.422.422 0 0 1-.083.152.175.175 0 0 1-.14.06.18.18 0 0 1-.141-.06.423.423 0 0 1-.085-.152.907.907 0 0 1-.04-.197 1.95 1.95 0 0 1 0-.387.915.915 0 0 1 .04-.195c.02-.06.048-.11.085-.152a.182.182 0 0 1 .142-.061zm-9.713.185a.465.465 0 0 0-.232.055.456.456 0 0 0-.157.146.627.627 0 0 0-.089.215 1.168 1.168 0 0 0-.027.259c0 .09.009.177.027.26a.648.648 0 0 0 .089.216c.04.063.093.112.157.149a.459.459 0 0 0 .232.056c.09 0 .168-.02.231-.056a.45.45 0 0 0 .156-.149.67.67 0 0 0 .087-.217 1.218 1.218 0 0 0 0-.518.647.647 0 0 0-.087-.215.448.448 0 0 0-.156-.146.458.458 0 0 0-.23-.055zm1.052.035l-.423.31.158.217.24-.185v.944h.303v-1.286zm-1.052.224c.04 0 .073.014.097.042a.284.284 0 0 1 .057.105.69.69 0 0 1 .028.136c.004.049.007.092.007.133 0 .04-.003.086-.007.135a.684.684 0 0 1-.028.136.285.285 0 0 1-.057.105.123.123 0 0 1-.097.043.125.125 0 0 1-.098-.043.298.298 0 0 1-.059-.105.612.612 0 0 1-.028-.136 1.39 1.39 0 0 1 0-.268.62.62 0 0 1 .028-.136.297.297 0 0 1 .06-.105.125.125 0 0 1 .097-.042zm3.775 1.394a.463.463 0 0 0-.232.054.452.452 0 0 0-.157.146.621.621 0 0 0-.088.214 1.19 1.19 0 0 0 0 .519.641.641 0 0 0 .088.217.46.46 0 0 0 .157.15.458.458 0 0 0 .232.054.454.454 0 0 0 .232-.055.45.45 0 0 0 .155-.149.664.664 0 0 0 .087-.217 1.189 1.189 0 0 0 0-.519.642.642 0 0 0-.087-.214.446.446 0 0 0-.155-.146.459.459 0 0 0-.232-.054zm1.052.034l-.423.31.158.216.24-.185v.945h.303V22.68zm-1.052.223c.04 0 .073.014.098.043a.3.3 0 0 1 .057.105.643.643 0 0 1 .027.135 1.31 1.31 0 0 1 0 .268.654.654 0 0 1-.027.137.307.307 0 0 1-.057.105.124.124 0 0 1-.098.042.125.125 0 0 1-.098-.042.293.293 0 0 1-.059-.105.618.618 0 0 1-.028-.137 1.364 1.364 0 0 1 0-.268.612.612 0 0 1 .028-.135.287.287 0 0 1 .06-.105.123.123 0 0 1 .097-.043z" id="mainIconPathAttribute" fill="green"></path></svg>
+
+                        <a class="contact-icon" href="https://app.hackthebox.com/profile/2054062" target="_blank" rel="noopener">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="IconChangeColor" height="29" width="29"><title>Hack The Box</title><path d="M11.9959.0008a1.1187 1.1187 0 00-.057.002.8993.8993 0 00-.2358.0498.9067.9067 0 00-.1652.079L1.9357 5.675a.889.889 0 00-.4444.7699c0 .006.0004.0128.0006.0192-.0002.007 0 .014 0 .0212V17.556a.889.889 0 00.469.7837l9.5983 5.5416c.018.0102.036.0197.054.0287v.002a.8568.8568 0 00.083.0348c0 .001.01.003.012.004.028.01.056.0177.085.0245.01.001.011.003.016.004.028.006.057.0112.086.0146 0 .0005.01.0009.014.001.03.003.061.005.091.005s.061-.002.091-.005c0-.0005.01-.0009.014-.001a.6831.6831 0 00.086-.0146c.01-.001.011-.002.016-.004a.9404.9404 0 00.085-.0245c0-.001.01-.003.012-.004a.8818.8818 0 00.083-.0347v-.002a1.086 1.086 0 00.054-.0287l9.5986-5.5416a.889.889 0 00.4689-.7837V6.4786c0-.009-.0006-.0172-.0008-.0258h.0003v-.008a.8886.8886 0 00-.3117-.6755c-.01-.008-.019-.0162-.029-.0241 0-.002-.01-.005-.01-.007a.8988.8988 0 00-.1074-.0705L12.4533.1267a.8872.8872 0 00-.4646-.1266zm.01 2.2523c.072 0 .1443.0187.209.056l6.5366 3.774c.2789.161.2789.5633 0 .7243l-6.5367 3.774a.4182.4182 0 01-.4182 0L5.26 6.8074c-.2788-.1609-.2789-.5633 0-.7243l6.5368-3.774a.4193.4193 0 01.209-.056zm-8.0801 6.458a.4145.4145 0 01.215.0565l6.524 3.7666a.417.417 0 01.2086.3612v7.5326c0 .3212-.3477.522-.626.3613l-6.5237-3.7666a.4172.4172 0 01-.2086-.3613V9.1288c0-.2408.1955-.414.4107-.4177zm16.1599 0c.215.004.4107.1768.4107.4177v7.5325c0 .149-.08.2868-.2087.3614l-6.5239 3.7666c-.278.1606-.6258-.0401-.6258-.3614v-7.5325c0-.149.08-.2867.2086-.3613l6.5238-3.7666a.415.415 0 01.2152-.0565z" id="mainIconPathAttribute" fill="green"></path></svg>
+                        </a>
+
+                        </a>
+                        <a class="contact-icon" href="https://ctftime.org/user/193917" aria-label="CTFtime"
+                            title="CTFtime">
+                            <i class="fas fa-flag"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <!-- <div class="text-center pt-2">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 text-center">
+                        <div class="text-secondary">
+                            Made with Hugo
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </footer>
+
+    <script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll (hacker-friendly)
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (!navbar) return;
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-dark');
+                navbar.classList.remove('pt-3');
+            } else {
+                navbar.classList.remove('nav-dark');
+                navbar.classList.add('pt-3');
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

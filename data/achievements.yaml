@@ -1,0 +1,19 @@
+- title: "Best Web App Award"
+  date: "2023"
+  description: "Tech Innovation Summit - Awarded for innovative approach to solving user experience challenges in web applications."
+  organization: "Tech Innovation Summit"
+
+- title: "Google Developer Scholarship"
+  date: "2022"
+  description: "Selected among top candidates for advanced web development training program sponsored by Google."
+  organization: "Google"
+
+- title: "Hackathon First Place"
+  date: "2021"
+  description: "CodeForGood Hackathon - Led team to develop a solution for non-profit organization management."
+  organization: "CodeForGood"
+
+- title: "Dean's List"
+  date: "2020"
+  description: "University of Technology - Recognized for academic excellence throughout the academic year."
+  organization: "University of Technology"

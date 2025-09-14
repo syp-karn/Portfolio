@@ -1,0 +1,19 @@
+- position: "Frontend Developer"
+  company: "Tech Solutions Inc."
+  date: "2022 - Present"
+  description: "Developed responsive web applications and collaborated with UX designers."
+  projects:
+    - name: "E-Commerce Platform"
+      description: "Built a full-stack e-commerce solution with React and Node.js"
+    - name: "Customer Dashboard"
+      description: "Created an analytics dashboard for real-time data visualization"
+
+- position: "Web Developer Intern"
+  company: "Digital Creations Agency"
+  date: "2021 - 2022"
+  description: "Assisted in developing and maintaining client websites."
+  projects:
+    - name: "Client Portfolio Website"
+      description: "Designed and developed a responsive portfolio for a local artist"
+    - name: "Restaurant Booking System"
+      description: "Implemented an online reservation system for a restaurant chain"

@@ -1,0 +1,11 @@
+- degree: "Bachelor of Science in Computer Science"
+  institution: "University of Technology"
+  date: "2019 - 2023"
+  description: "Specialized in Web Development and User Experience Design. Graduated with Honors (GPA: 3.8/4.0)."
+  courses: "Advanced Web Development, Human-Computer Interaction, Data Structures, Algorithms, Database Systems"
+
+- degree: "High School Diploma"
+  institution: "Science and Technology High School"
+  date: "2017 - 2019"
+  description: "Focus on Mathematics and Computer Science. Participated in coding competitions and tech clubs."
+  courses: "Advanced Mathematics, Computer Programming, Physics"

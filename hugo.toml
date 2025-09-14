@@ -1,0 +1,52 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "Ramcharan's Portfolio"
+theme = "hugo-profile"
+
+[params]
+  description = "Professional portfolio of Ramcharan - Web Developer & UX Designer"
+  github = "https://github.com/yourusername"
+  linkedin = "https://linkedin.com/in/yourusername"
+  twitter = "https://twitter.com/yourusername"
+  
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "#home"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "#about"
+    weight = 2
+  [[menu.main]]
+    identifier = "education"
+    name = "Education"
+    url = "#education"
+    weight = 3
+  [[menu.main]]
+    identifier = "skills"
+    name = "Skills"
+    url = "#skills"
+    weight = 4
+  [[menu.main]]
+    identifier = "experience"
+    name = "Experience"
+    url = "#experience"
+    weight = 5
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "#projects"
+    weight = 6
+  [[menu.main]]
+    identifier = "achievements"
+    name = "Achievements"
+    url = "#achievements"
+    weight = 7
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "#contact"
+    weight = 8
