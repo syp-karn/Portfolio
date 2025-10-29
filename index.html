@@ -2,12 +2,10 @@
 <html lang="en">
 
 <head>
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
-    <link rel="icon" href="themes/hugo-profile/static/fav.png" type="image/gif">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,597 +23,21 @@
             rel="stylesheet">
     </noscript>
 
-    <link rel="stylesheet" href="themes/hugo-profile/static/css/font.css" media="all">
-
-    <meta property="og:url" content="{{ .Site.BaseURL }}">
-    <meta property="og:site_name" content="{{ .Site.Title }}">
-    <meta property="og:title" content="Poorvaj - Portfolio">
-    <meta property="og:locale" content="en_us">
-    <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Poorvaj - Portfolio">
 
-    <link rel="stylesheet" href="themes/hugo-profile/static/bootstrap-5/css/bootstrap.min.css" media="all">
-    <link rel="stylesheet" href="themes/hugo-profile/static/css/header.css" media="all">
-    <link rel="stylesheet" href="themes/hugo-profile/static/css/footer.css" media="all">
-    <link rel="stylesheet" href="themes/hugo-profile/static/css/theme.css" media="all">
-
-    <style>
-        :root {
-            /* Hacker Terminal Theme with Color Variety */
-            --text-color: #00ff41;
-            --text-secondary-color: #39ff14;
-            --text-link-color: #00ff41;
-            --background-color: #0a0a0a;
-            --secondary-background-color: #1a1a1a;
-            --primary-color: #00ff41;
-            --secondary-color: #0a0a0a;
-
-            --text-color-dark: #00ff41;
-            --text-secondary-color-dark: #39ff14;
-            --text-link-color-dark: #00ff41;
-            --background-color-dark: #000000;
-            --secondary-background-color-dark: #0d1117;
-            --primary-color-dark: #00ff41;
-            --secondary-color-dark: #0d1117;
-
-            /* Hacker accent colors */
-            --hacker-green: #00ff41;
-            --hacker-cyan: #00ffff;
-            --hacker-purple: #8b5cf6;
-            --hacker-orange: #ff6b35;
-            --hacker-red: #ff0040;
-        }
-
-        body {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            text-align: left;
-            scroll-behavior: smooth;
-        }
-
-        html {
-            background-color: #000 !important;
-        }
-
-        /* Hacker scanline effect */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(rgba(0, 255, 65, 0.03),
-                    rgba(0, 255, 65, 0.03) 2px,
-                    transparent 2px,
-                    transparent 4px);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        body::-webkit-scrollbar {
-            height: 0px;
-            width: 8px;
-            background-color: var(--background-color);
-        }
-
-        ::-webkit-scrollbar-track {
-            border-radius: 1rem;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            border-radius: 1rem;
-            background: #b0b0b0;
-            outline: 1px solid var(--background-color);
-        }
-
-        #search-content::-webkit-scrollbar {
-            width: .5em;
-            height: .1em;
-            background-color: var(--background-color);
-        }
-
-        /* Portfolio Specific Styles - Hacker theme */
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-            color: var(--text-color-dark);
-            text-shadow: 0 0 8px rgba(0, 255, 65, .6);
-        }
-
-        .hacker-title {
-            width: 100%;
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 20px;
-            overflow: hidden;
-            /* border-right: .15em solid #00ff00; */
-            white-space: nowrap;
-            animation: typing 5s steps(30, end), blink .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0
-            }
-
-            to {
-                width: 100%
-            }
-        }
-
-        .cursor {
-            border-right: none;
-            /* Remove the cursor */
-        }
-
-        @keyframes blink {
-
-            from,
-            to {
-                border-color: transparent
-            }
-
-            50% {
-                border-color: #00ff00;
-            }
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--hacker-green);
-            margin: 15px auto;
-            box-shadow: 0 0 6px var(--hacker-green);
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: var(--background-color-dark);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Hacker theme - always dark */
-        body,
-        html {
-            background-color: #000 !important;
-            color: var(--text-color-dark) !important;
-        }
-
-        section,
-        header,
-        footer,
-        nav,
-        .container,
-        .row,
-        .col,
-        .card,
-        .achievement-item,
-        .project-card,
-        .skill-card {
-            background-color: #000 !important;
-            color: var(--text-color-dark) !important;
-        }
-
-        .navbar {
-            background: rgba(0, 0, 0, .9) !important;
-            border-bottom: 1px solid var(--hacker-green);
-        }
-
-        .nav-link {
-            color: var(--text-color-dark) !important;
-        }
-
-        .nav-link:hover {
-            color: var(--text-link-color-dark) !important;
-            text-shadow: 0 0 6px var(--hacker-green);
-        }
-
-        .btn,
-        .btn-primary,
-        .btn-outline-primary {
-            border: 1px solid var(--hacker-green);
-            color: var(--hacker-green);
-            background: transparent;
-            box-shadow: 0 0 6px rgba(0, 255, 65, .3);
-        }
-
-        .btn:hover {
-            background: var(--hacker-green);
-            color: #000;
-            box-shadow: 0 0 12px var(--hacker-green);
-        }
-
-        .border,
-        .card,
-        .form-control {
-            border-color: var(--hacker-green) !important;
-        }
-
-        .bg-light,
-        .bg-white {
-            background-color: #000 !important;
-        }
-
-        .nav-dark {
-            background: rgba(0, 0, 0, .95) !important;
-            border-bottom: 1px solid var(--hacker-green);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--text-secondary-color);
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color-dark);
-            border-color: var(--primary-color-dark);
-            padding: 0.75rem 2rem;
-            font-weight: 600;
-            border-radius: 30px;
-        }
-
-        .btn-outline-primary {
-            border-color: var(--primary-color-dark);
-            color: var(--primary-color-dark);
-            padding: 0.75rem 2rem;
-            font-weight: 600;
-            border-radius: 30px;
-        }
-
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color-dark);
-            color: white;
-        }
-
-        .about-text {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Hacker-style skill boxes */
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: rgba(0, 0, 0, 0.85);
-            border: 1px solid var(--hacker-cyan);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px var(--hacker-cyan), 0 0 20px var(--hacker-cyan) inset;
-            transition: 0.3s ease-in-out;
-            position: relative;
-            z-index: 2;
-        }
-
-        .skill-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px var(--hacker-cyan), 0 0 40px var(--hacker-cyan) inset;
-        }
-
-        .skill-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--text-color-dark);
-            text-align: center;
-            text-shadow: 0 0 5px var(--hacker-green);
-        }
-
-        .skill-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: .6rem;
-        }
-
-        .skill-chip {
-            background: rgba(0, 0, 0, 0.6);
-            color: var(--text-color-dark);
-            border: 1px solid var(--hacker-green);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: .9rem;
-            box-shadow: 0 0 5px var(--hacker-green) inset;
-            transition: 0.2s ease;
-        }
-
-        .skill-chip:hover {
-            background: var(--hacker-green);
-            color: #000;
-            box-shadow: 0 0 8px var(--hacker-green);
-        }
-
-        /* Alternating Timeline Layout */
-        .timeline-container {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 4rem;
-            width: 45%;
-            padding: 2rem;
-            background: var(--secondary-background-color-dark);
-            border: 1px solid var(--hacker-cyan);
-            border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0, 255, 255, .2);
-            transition: transform .3s ease;
-            z-index: 2;
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 12px rgba(0, 255, 255, .4);
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            margin-left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 55%;
-            margin-left: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 16px;
-            height: 16px;
-            background: var(--hacker-cyan);
-            border: 2px solid #000;
-            border-radius: 50%;
-            box-shadow: 0 0 8px var(--hacker-cyan);
-        }
-
-        .timeline-item:nth-child(odd)::before {
-            right: -8px;
-        }
-
-        .timeline-item:nth-child(even)::before {
-            left: -8px;
-        }
-
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 2px;
-            height: 100%;
-            background: var(--hacker-cyan);
-            box-shadow: 0 0 6px var(--hacker-cyan);
-            transform: translateX(-50%);
-        }
-
-        .timeline-date {
-            font-size: 0.9rem;
-            color: var(--text-secondary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-subtitle {
-            font-size: 1rem;
-            color: var(--text-secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .project-card {
-            background: var(--secondary-background-color-dark);
-            border: 1px solid var(--hacker-cyan);
-            border-radius: 8px;
-            padding: 1.25rem;
-            height: 100%;
-            transition: transform .3s ease;
-            box-shadow: 0 0 8px rgba(0, 255, 255, .2);
-            position: relative;
-            z-index: 2;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 20px rgba(0, 255, 255, .5);
-        }
-
-        .project-content {
-            padding: .25rem 0 0;
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-tags {
-            margin-bottom: 1rem;
-        }
-
-        .project-tag {
-            display: inline-block;
-            background: rgba(0, 255, 255, .1);
-            color: var(--hacker-cyan);
-            border: 1px solid var(--hacker-cyan);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .achievement-item {
-            background: var(--secondary-background-color-dark);
-            border: 1px solid var(--hacker-cyan);
-            padding: 1.25rem;
-            border-radius: 8px;
-            margin-bottom: 1.25rem;
-            box-shadow: 0 0 8px rgba(0, 255, 255, .2);
-            transition: transform .3s ease;
-            position: relative;
-            z-index: 2;
-        }
-
-        .achievement-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 16px rgba(0, 255, 255, .4);
-        }
-
-        .achievement-date {
-            font-size: 0.9rem;
-            color: var(--text-secondary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-info {
-            margin-bottom: 2rem;
-        }
-
-        .contact-icons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            border: 1px solid var(--hacker-cyan);
-            color: var(--text-color-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 255, 255, .1);
-            box-shadow: 0 0 8px rgba(0, 255, 255, .3);
-            transition: transform .3s ease;
-            position: relative;
-            z-index: 2;
-        }
-
-        .contact-icon:hover {
-            background: var(--hacker-cyan);
-            color: #000;
-            box-shadow: 0 0 12px var(--hacker-cyan);
-            transform: scale(1.1);
-        }
-
-        .contact-form .form-control {
-            border-radius: 10px;
-            padding: 0.75rem 1rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #dee2e6;
-        }
-
-        .dark .contact-form .form-control {
-            background-color: var(--secondary-background-color-dark);
-            border-color: #495057;
-            color: var(--text-color-dark);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--secondary-background-color);
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .dark .social-link {
-            background-color: var(--secondary-background-color-dark);
-        }
-
-        .social-link:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.25rem;
-            }
-
-            .about-content {
-                flex-direction: column;
-            }
-
-            .section {
-                padding: 3rem 0;
-            }
-
-            /* Mobile timeline - stack vertically */
-            .timeline-item {
-                width: 100% !important;
-                left: 0 !important;
-                margin-left: 0 !important;
-            }
-
-            .timeline-item::before {
-                display: none;
-            }
-
-            .timeline-container::before {
-                display: none;
-            }
-        }
-    </style>
-
-    <meta name="description" content="Ramcharan's Professional Portfolio - showcasing skills, experience, and projects">
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="css/header.css" media="all">
+    <link rel="stylesheet" href="css/footer.css" media="all">
+    <link rel="stylesheet" href="css/theme.css" media="all">
+    <link rel="stylesheet" href="css/styles.css" media="all">
+
+    <meta name="description" content="Poorvaj's Portfolio Website">
     <title>Poorvaj's Portfolio</title>
 </head>
 
 <body>
-    <script>
-        // Hacker theme is always active - no theme switching needed
-    </script>
 
     <header id="profileHeader">
         <nav class="pt-3 navbar navbar-expand-lg fixed-top">
@@ -634,9 +56,6 @@
 
                 <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
                     <ul class="navbar-nav ms-auto text-center">
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
-                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="#about">About</a>
                         </li>
@@ -646,9 +65,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#certifications">Certifications</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
-                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="#skills">Skills</a>
                         </li>
@@ -670,18 +86,13 @@
     </header>
 
     <div id="content">
-        <!-- 1) Hero Section -->
+        <!-- 1) Title -->
         <section id="home" class="hero">
-            <div class="container">
-                <!-- <div class="row align-items-center"> -->
                 <div class="col-12 text-center hero-content">
                     <h1 class="hero-title"><span style="color: var(--hacker-green);">B S Poorvaj Pranav</span></h1>
                     <br>
                     <h2 class="hero-subtitle">Offensive Security Practitioner</h2>
-                    <!-- <p class="lead">Welcome to my portfolio website!</p> -->
                 </div>
-                <!-- </div> -->
-            </div>
         </section>
 
         <!-- 2) About Section -->
@@ -697,118 +108,9 @@
                     </p>
                     <p>Currently I'm honing my web app pentesting skills, and researching Cloud Security. I also dabble
                         in Machine Learning and AI Security in my spare time.</p>
-                    <!-- <div class="row mt-4">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li><strong>Name:</strong> Ramcharan</li>
-                                    <li><strong>Email:</strong> hello@ramcharan.com</li>
-                                    <li><strong>Location:</strong> City, Country</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li><strong>Degree:</strong> Bachelor of Computer Science</li>
-                                    <li><strong>Freelance:</strong> Available</li>
-                                    <li><strong>Languages:</strong> English, Spanish</li>
-                                </ul>
-                            </div>
-                        </div> -->
                 </div>
             </div>
         </section>
-
-        <!-- Education removed as requested -->
-
-        <!-- Skills Section
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="skill-category">
-                            <h3>Technical Skills</h3>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>HTML/CSS</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 95%;"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>JavaScript</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 90%;"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>React</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 85%;"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Node.js</span>
-                                    <span>80%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 80%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="skill-category">
-                            <h3>Professional Skills</h3>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>UI/UX Design</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 90%;"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Project Management</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 85%;"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Communication</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 95%;"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Problem Solving</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 90%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
 
         <!-- 3) Work Experience -->
         <section id="experience" class="section">
@@ -938,36 +240,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="project-card">
-                            <div class="project-content">
-                                <h3 class="project-title">Task Management App</h3>
-                                <div class="project-tags">
-                                    <span class="project-tag">Vue.js</span>
-                                    <span class="project-tag">Firebase</span>
-                                    <span class="project-tag">CSS3</span>
-                                </div>
-                                <p>A collaborative task management application with real-time updates and drag-and-drop
-                                    functionality.</p>
-                                <a href="#" class="btn btn-sm btn-outline-primary">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="project-card">
-                            <div class="project-content">
-                                <h3 class="project-title">Travel Blog Platform</h3>
-                                <div class="project-tags">
-                                    <span class="project-tag">Gatsby</span>
-                                    <span class="project-tag">Contentful</span>
-                                    <span class="project-tag">GraphQL</span>
-                                </div>
-                                <p>A performant travel blog built with Gatsby, featuring dynamic content and optimized
-                                    media delivery.</p>
-                                <a href="#" class="btn btn-sm btn-outline-primary">View Project</a>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </section>
@@ -1133,22 +405,8 @@
         </section>
     </div>
 
-    <footer>
-        <!-- <div class="text-center pt-2">
-            <div class="container py-4">
-                <div class="row justify-content-center">
-                    <div class="col-md-4 text-center">
-                        <div class="text-secondary">
-                            Made with Hugo
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    </footer>
 
-    <script src="themes/hugo-profile/static/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
